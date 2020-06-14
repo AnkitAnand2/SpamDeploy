@@ -6,10 +6,36 @@
 		<title>Spam SMS Detector</title>
 		<link rel="shortcut icon" href="{{ url_for('static', filename='spam-favicon.ico') }}">
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
 	</head>
 
 	<body>
+	<header class="text-gray-700 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+      
+    </nav>
+    <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span class="ml-3 text-xl">SpamDetecctor</span>
+    </a>
+    <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+      
+    </div>
+  </div>
+</header>
+	<section class="text-gray-700 body-font">
+  <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+    <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://source.unsplash.com/400x200/?Phone">
+    <div class="text-center lg:w-2/3 w-full">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Result</h1>
+      
+    </div>
+  </div>
+</section>
 
 		<!-- Website Title -->
 		<div class="container">
@@ -22,18 +48,16 @@
 		<!-- Result -->
 		<div class="results">
 			{% if prediction==1 %}
-				<h1>Prediction: <span class='danger'>Gotcha! This is a SPAM message.</span></h1>
-				<img class="gif" src="{{ url_for('static', filename='spam.webp') }}" alt="SPAM Image">
+				<h1>Prediction: <span class='danger'>Warning! This is a SPAM message.</span></h1>
 			{% elif prediction==0 %}
 				<h1>Prediction: <span class='safe'>Great! This is NOT a spam message.</span></h1>
-				<img class="gif" src="{{ url_for('static', filename='not-spam.webp') }}" alt="Not a spam image">
 			{% endif %}
 		</div>
 
 		<!-- Footer -->
         <div class='footer'>
             
-            <p class='footer-description'>By Ankit Anand</p>
+            <p class='footer-description'>Ankit Anand</p>
         </div>
 
 	</body>
